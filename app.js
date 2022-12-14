@@ -30,6 +30,7 @@ app.post('/login', function(req, res) {
 
     db.get(query, function (err, row) {
         if (err) {
+            console.log('ERROR', err)
             res.redirect('/index.html#error');
         } else if (!row) {
             res.redirect('/index.html#unauthorized');
